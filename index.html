@@ -1,53 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
-    <style>
-        #disqus_thread {
-            width: 50%;
-            margin-left: 25%;
-            margin-top: 15%;
-        }
 
-    </style>
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>WEB Проверятор Интентов</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:20px;background:#f6f7fb}
+    .card{background:#fff;padding:18px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.06);max-width:980px;margin:auto}
+    label{display:block;margin-top:10px;font-weight:600}
+    input[type=text], input[type=file]{width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:6px}
+    .row{display:flex;gap:10px}
+    .col{flex:1}
+    button{padding:10px 16px;margin-top:12px;border:0;border-radius:8px;cursor:pointer}
+    .btn-primary{background:#2563eb;color:white}
+    .btn-ghost{background:#e6eefc;color:#2563eb}
+    .result{margin-top:18px}
+    table{border-collapse:collapse;width:100%;margin-top:8px}
+    table, th, td {border:1px solid #ddd}
+    th, td{padding:6px;text-align:left;font-size:13px}
+    .controls{display:flex;gap:8px;margin-top:10px}
+    a.download{display:inline-block;margin-top:8px}
+    pre.err{background:#fee;padding:8px;border-radius:6px;color:#900}
+  </style>
 </head>
 <body>
-    <h1>
-        какой то текст
-    </h1>
-     <h1>
-        тут будет платформа клеар
-        
-    </h1>
-     <h1>
-        Нариман крутой 
-        
-    </h1>
-     <h1>
-        проект пайтон джанго 
-    </h1>
-    <div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+  <div class="card">
+    <h2>WEB Проверятор Интентов</h2>
+    <form method="post" enctype="multipart/form-data">
+      <label>JSON 1 (файл)</label>
+      <input type="file" name="json1">
+      <label>JSON 2 (файл)</label>
+      <input type="file" name="json2">
+      <label>JSON 3 (файл)</label>
+      <input type="file" name="json3">
+      <label>JSON 4 (файл)</label>
+      <input type="file" name="json4">
+
+      <div style="height:8px"></div>
+
+      <label>Excel таблица (.xlsx) — либо загрузить файл, либо вставить ссылку Google Sheets</label>
+      <input type="file" name="excel_file">
+      <label style="font-weight:400;margin-top:6px">ИЛИ Google Sheets ссылка (вставь ссылку):</label>
+      <input type="text" name="excel_url" placeholder="https://docs.google.com/spreadsheets/d/.../edit#gid=...">
+
+      <div class="controls">
+        <button class="btn-primary" name="action" value="compare_2">(2) Сравнить 2 файла</button>
+        <button class="btn-primary" name="action" value="compare_4">(4) Сравнить 4 файла</button>
+        <button class="btn-ghost" name="action" value="clear">Очистить форму</button>
+      </div>
+    </form>
+
     
-    var disqus_config = function () {
-    this.page.url = 'https://adik0105.github.io/';  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = 'index.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
+
     
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://clearoom-1.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<script>!function(e,t,a){var c=e.head||e.getElementsByTagName("head")[0],n=e.createElement("script");n.async=!0,n.defer=!0, n.type="text/javascript",n.src=t+"/static/js/chat_widget.js?config="+JSON.stringify(a),c.appendChild(n)}(document,"https://app.engati.com",{bot_key:"965b024a407043e5",welcome_msg:true,branding_key:"default",server:"https://app.engati.com",e:"p" });</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <script id="dsq-count-scr" src="//clearoom-1.disqus.com/count.js" async></script>
+  </div>
 </body>
 </html>
